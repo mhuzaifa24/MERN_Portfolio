@@ -1,0 +1,149 @@
+:root {
+    --bg-dark: #1e1e1e;
+    --text-light: #e0e0e0;
+    --text-mid: #cccccc;
+    --accent: #116466;
+    --progress-bg: #2e2e2e;
+    --glow-accent: #0f5557;
+  }
+  
+  .projectsContainer {
+    background-color: var(--bg-dark) !important;
+    min-height: 100vh;
+    padding: 2rem !important;
+    color: var(--text-light) !important;
+    margin: 0 !important;
+  }
+  
+  .projectsContainer .container {
+    padding: 2rem !important;
+    text-align: center;
+  }
+  
+  .projectsContainer .title {
+    font-size: 2.1rem !important;
+    font-weight: 700 !important;
+    color: var(--text-light) !important;
+    margin-bottom: 2.5rem !important;
+    text-align: center !important;
+    position: relative !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+  }
+  
+  .projectsContainer .title::after {
+    content: '';
+    position: absolute !important;
+    bottom: -10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 80px !important;
+    height: 6px !important;
+    background: linear-gradient(90deg, var(--accent), var(--glow-accent)) !important;
+    border-radius: 3px !important;
+    animation: pulse 2s infinite alternate !important;
+  }
+  
+  .projectsContainer .card {
+    background-color: var(--progress-bg) !important;
+    border-radius: 15px !important;
+    border: 2px solid transparent !important;
+    background-clip: padding-box !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+    transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+    height: 180px !important;
+    animation: fadeInUp 0.6s ease-out forwards !important;
+    animation-delay: calc(0.15s * var(--index)) !important;
+  }
+  
+  .projectsContainer .card::before {
+    content: '';
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    border-radius: 13px !important;
+    padding: 3px !important;
+    background: linear-gradient(45deg, var(--accent), var(--glow-accent), var(--accent)) !important;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+    -webkit-mask-composite: xor !important;
+    mask-composite: exclude !important;
+    z-index: -1 !important;
+    animation: glow 3s infinite alternate !important;
+  }
+  
+  .projectsContainer .card::after {
+    content: '';
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(135deg, rgba(17, 100, 102, 0.15), transparent) !important;
+    z-index: 0 !important;
+  }
+  
+  .projectsContainer .card:hover {
+    transform: translateY(-8px) rotate(0.5deg) scale(1.02) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6) !important;
+  }
+  
+  .projectsContainer .cardContent {
+    position: relative !important;
+    z-index: 1 !important;
+    padding: 1rem !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    height: 100% !important;
+  }
+  
+  .projectsContainer .cardTitle {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    color: var(--text-light) !important;
+    margin-bottom: 0.5rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+  }
+  
+  .projectsContainer .cardSubtitle {
+    font-size: 0.9rem !important;
+    color: var(--text-mid) !important;
+    margin-bottom: 0.4rem !important;
+    font-style: italic !important;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes glow {
+    from {
+      filter: brightness(1);
+    }
+    to {
+      filter: brightness(1.2);
+    }
+  }
+  
+  @keyframes pulse {
+    from {
+      width: 60px;
+    }
+    to {
+      width: 80px;
+    }
+  }

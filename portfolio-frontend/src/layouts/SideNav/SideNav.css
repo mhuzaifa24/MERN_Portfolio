@@ -1,0 +1,60 @@
+/* SideNav.css */
+
+.drawer-content {
+    background-color: #1e1e1e;
+    height: 100%;
+    color: #e0e0e0;
+    padding-top: 16px;
+    
+}
+
+.drawer-content > .MuiList-root {
+    padding: 16px 0;
+}
+
+.nav-item {
+    transition: background-color 0.3s, padding-left 0.3s, color 0.3s;
+    color: #e0e0e0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item:hover {
+    background-color: #2e2e2e;
+    padding-left: 20px;
+    color: #116466;
+    cursor: pointer;
+}
+
+.nav-item.active {
+    background-color: #116466;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.nav-item.Mui-selected,
+.nav-item:focus {
+    background-color: #116466;
+    color: #ffffff;
+}
+
+.nav-item .MuiListItemIcon-root {
+    color: #e0e0e0;
+    min-width: 40px; /* Ensures consistent spacing for icons */
+}
+
+.nav-item:hover .MuiListItemIcon-root {
+    color: #116466;
+}
+
+.menu-icon {
+    color: #ffffff;
+    background-color: #116466;
+    border-radius: 50%;
+    padding: 8px;
+    transition: background-color 0.3s;
+}
+
+.menu-icon:hover {
+    background-color: #0f5557;
+}
