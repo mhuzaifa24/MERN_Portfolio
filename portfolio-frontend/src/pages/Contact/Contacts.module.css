@@ -1,0 +1,143 @@
+:root {
+    --bg-dark: #1e1e1e;
+    --text-light: #e0e0e0;
+    --text-mid: #cccccc;
+    --accent: #116466;
+    --progress-bg: #2e2e2e;
+    --glow-accent: #0f5557;
+  }
+.formContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem !important;
+    background-color: var(--progress-bg) !important;
+    border-radius: 15px !important;
+    border: 2px solid transparent !important;
+    background-clip: padding-box !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+    position: relative !important;
+    animation: fadeIn 0.8s ease-out forwards !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    min-height: 75vh !important;
+}
+  
+  .formContainer::before {
+    content: '';
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    border-radius: 13px !important;
+    padding: 3px !important;
+    background: linear-gradient(45deg, var(--accent), var(--glow-accent), var(--accent)) !important;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+    -webkit-mask-composite: xor !important;
+    mask-composite: exclude !important;
+    z-index: -1 !important;
+    animation: glow 3s infinite alternate !important;
+  }
+  
+  .formContainer::after {
+    content: '';
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(135deg, rgba(17, 100, 102, 0.15), transparent) !important;
+    z-index: 0 !important;
+  }
+  
+  .inputField {
+    margin-bottom: 0 !important; /* Gap is handled by Box */
+    position: relative !important;
+    z-index: 1 !important;
+  }
+  
+  .inputLabel {
+    color: var(--text-mid) !important;
+    font-weight: 500 !important;
+    margin-bottom: 10px;
+  }
+  
+  .input {
+    color: var(--text-light) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .inputField .Mui-focused .MuiInputBase-input {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 0 8px rgba(17, 100, 102, 0.3) !important;
+  }
+  
+  .inputField .Mui-focused .MuiInputLabel-root {
+    color: var(--progress-bg) !important;
+  }
+  
+  .inputField .MuiOutlinedInput-root {
+    border-color: var(--text-mid) !important;
+  }
+  
+  .inputField .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: var(--accent) !important;
+  }
+  
+  .inputField .Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: var(--accent) !important;
+  }
+  
+  .inputField .Mui-error .MuiOutlinedInput-notchedOutline {
+    border-color: #f44336 !important;
+  }
+  
+  .inputField .MuiFormHelperText-root {
+    color: var(--text-mid) !important;
+  }
+  
+  .inputField .Mui-error.MuiFormHelperText-root {
+    color: #f44336 !important;
+  }
+  
+  .submitButton {
+    margin-top: 1rem !important;
+    background-color: var(--accent) !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  .submitButton:hover {
+    background-color: var(--glow-accent) !important;
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4) !important;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes glow {
+    from {
+      filter: brightness(1);
+    }
+    to {
+      filter: brightness(1.2);
+    }
+  }

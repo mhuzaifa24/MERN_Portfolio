@@ -1,0 +1,206 @@
+:root {
+  --bg-dark: #1e1e1e;
+  --text-light: #e0e0e0;
+  --text-mid: #cccccc;
+  --text-dark: #333;
+  --accent: #116466;
+  --progress-bg: #2e2e2e;
+}
+
+.homeContainer {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 100vh;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  width: 100%;
+  margin: 0;
+}
+
+/* Hero Section */
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 20px 80px;
+  background: linear-gradient(135deg, var(--accent) 80%, var(--bg-dark) 20%);
+  color: #ffffff;
+  margin-bottom: 60px;
+}
+
+.heroHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.heroAvatar {
+  width: 150px !important;
+  height: 150px !important;
+  border: 4px solid var(--progress-bg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.heroAvatar:hover {
+  transform: scale(1.05);
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.heroSubtitle {
+  color: var(--text-mid);
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.heroButtons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.button {
+  text-transform: none;
+  padding: 10px 20px;
+  border-color: var(--accent) !important;
+  color: var(--text-light) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--accent) !important;
+  color: #ffffff !important;
+  transform: scale(1.05);
+}
+
+/* About Section */
+.aboutSection {
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.aboutCard {
+  background-color: #2e2e2e;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(45deg, var(--accent), #0f5557);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.aboutCard::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--accent);
+}
+
+.aboutCard:hover {
+  transform: translateY(-5px) rotate(1deg);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.sectionTitle {
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 32px !important;
+}
+
+.sectionText {
+  color: var(--text-mid);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Skills Section */
+/* Skills Section */
+.skillsSection {
+  padding: 60px 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skillItem {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 32px auto;
+  text-align: left;
+}
+
+.skillLabel {
+  margin-bottom: 8px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.progressContainer {
+  width: 100%;
+  height: 12px;
+  background-color: var(--progress-bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: 8px 0 0 8px;
+  transition: width 1.2s ease-in-out;
+}
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
