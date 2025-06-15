@@ -1,26 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Typography, Grid, Card, CardContent } from '@mui/material';
 import styles from './Education.module.css';
+import { getEducation } from '../../api';
 
 const Education = () => {
-  const educationData = [
-    {
-      degree: "BS Computer Science",
-      institution: "Information Technology University",
-      year: "2022 - Present",
-    },
-    {
-      degree: "Intermediate",
-      institution: "Punjab Group of Colleges",
-      year: "2020 - 2022",
-    },
-    {
-      degree: "Matriculation",
-      institution: "The Trust School",
-      year: "2018 - 2020",
-    },
-  ];
+  const [educationData, setEducationData] = useState([]);
 
+  useEffect(() => {
+    const fetchEducation = async () => {
+      try {
+        const res = await getEducation();
+        setEducationData(res.data);
+      } catch (err) {
+        console.error('Failed to load education data:', err);
+      }
+    };
+
+    fetchEducation();
+  }, []);
+
+  
   return (
     <Box className={styles.educationWrapper}>
       <Typography variant="h4" className={styles.title}>

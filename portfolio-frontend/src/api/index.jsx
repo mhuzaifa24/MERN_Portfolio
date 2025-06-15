@@ -1,17 +1,14 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000', // your backend URL
+  baseURL: 'http://localhost:5000/api', // your backend URL
 });
 
 export const getEducation = () => API.get('/education');
 
-
-export const fetchProjects = () => API.get('/project');
-
+export const getProjects = () => API.get('/projects');
 // Example: post contact form
 export const submitContact = (data) => API.post('/contact', data);
 
-export const getHome = () => API.get('/home');
+export const getSkills = () => API.get('/skills');
 
-export const getProjects = () => API.get('/projects');

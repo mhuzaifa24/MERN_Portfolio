@@ -1,18 +1,25 @@
-import React from 'react';
-import { Box, Typography, Button, Grid, Chip, Container } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { Box, Typography, Button, Container } from '@mui/material';
 import { GitHub, LinkedIn } from '@mui/icons-material';
 import styles from './Home.module.css';
 import My_Pic from '../../assets/My_Pic.jpg';
 import Avatar from '@mui/material/Avatar';
+import { getSkills } from '../../api';
 
 const Home = () => {
-  const skills = [
-    { name: 'C++', level: 90 },
-    { name: 'Python', level: 80 },
-    { name: 'AI', level: 80 },
-    { name: 'React', level: 40 },
-    { name: 'JavaScript', level: 80 },
-  ];
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    const fetchSkills = async () => {
+      try {
+        const res = await getSkills();
+        setSkills(res.data);
+      } catch (err) {
+        console.error('Error fetching skills:', err);
+      }
+    };
+    fetchSkills();
+  }, []);
 
   return (
     <Box className={styles.homeContainer}>
